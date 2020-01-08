@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.RootLayoutController">
+   <children>
+      <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+
+          </Menu>
+          <Menu mnemonicParsing="false" text="Tools">
+
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#showAboutWindow" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Pane layoutX="14.0" layoutY="53.0" prefHeight="171.0" prefWidth="260.0" style="-fx-border-color: #A4A4A4; -fx-border-radius: 4;">
+         <children>
+            <Label fx:id="controlPanel" layoutX="15.0" layoutY="-8.0" style="-fx-background-color: #F4F4F4;" text=" Control panel " />
+            <GridPane layoutX="8.0" layoutY="12.0" prefHeight="148.0" prefWidth="244.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="153.4" minWidth="56.80000457763671" prefWidth="82.40001220703125" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.2000244140625" minWidth="36.0" prefWidth="94.40004882812501" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.79997558593749" minWidth="50.39995117187499" prefWidth="67.199951171875" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="Serial port" />
+                  <Label text="Seed temp." GridPane.rowIndex="2" />
+                  <Label text="INT freq." GridPane.rowIndex="1" />
+                  <TextField fx:id="textFieldTemperature" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="chooseTrigger" prefWidth="110.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="Trigger" GridPane.rowIndex="3" />
+                  <TextField fx:id="textFieldRepRate" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="choosePrefix" prefHeight="26.0" prefWidth="62.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin></ChoiceBox>
+                  <ChoiceBox fx:id="chooseSerialPort" prefWidth="165.0" GridPane.columnIndex="1" GridPane.columnSpan="2">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </ChoiceBox>
+                  <Label text="m°C  " GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <ToggleButton fx:id="indicator" mnemonicParsing="false" style="-fx-background-radius: 20;" text="   " GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+      <Pane layoutX="288.0" layoutY="53.0" prefHeight="171.0" prefWidth="290.0" style="-fx-border-color: A4A4A4; -fx-border-radius: 4;">
+         <children>
+            <Label layoutX="14.0" layoutY="-8.0" style="-fx-background-color: #F4F4F4;" text=" System info " />
+            <GridPane layoutX="11.0" layoutY="13.0" prefHeight="148.0" prefWidth="270.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.19998779296876" minWidth="10.0" prefWidth="138.9999755859375" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="71.4000244140625" minWidth="7.000036621093756" prefWidth="15.000024414062494" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.20003662109374" minWidth="10.0" prefWidth="115.99998779296874" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="HW-Rev." />
+                  <Label text="Serial-Num." GridPane.rowIndex="1" />
+                  <Label text="Ser.-Num. SEED LD" GridPane.rowIndex="2" />
+                  <Label text="Ser.-Num. PUMP LD" GridPane.rowIndex="3" />
+                  <Label text="FW-Version" GridPane.rowIndex="5" />
+                  <Label text="Production Date" GridPane.rowIndex="4" />
+                  <Text fx:id="textHardwareVersion" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" />
+                  <Text fx:id="textSerialNumber" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Text fx:id="textSerialNumberOfSeedDiode" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Text fx:id="textSerialNumberOfPumpDiode" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Text fx:id="textProductionDate" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Text fx:id="textFirmwareVersion" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+      <Pane layoutX="599.0" layoutY="53.0" prefHeight="536.0" prefWidth="290.0" style="-fx-border-color: A4A4A4; -fx-border-radius: 4;">
+         <children>
+            <Label layoutX="14.0" layoutY="-8.0" style="-fx-background-color: #F4F4F4;" text=" Command panel " />
+            <GridPane layoutX="11.0" layoutY="10.0" prefHeight="516.0" prefWidth="268.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="249.1999755859375" minWidth="10.0" prefWidth="245.1999755859375" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="88.0" minWidth="10.0" prefWidth="22.800024414062506" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="103.8000244140625" minHeight="0.0" prefHeight="36.00001831054688" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="479.1999816894532" minHeight="10.0" prefHeight="479.1999816894532" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="textFieldCommand" prefHeight="26.0" promptText="type here">
+                     <GridPane.margin>
+                        <Insets right="7.0" />
+                     </GridPane.margin></TextField>
+                  <Button fx:id="buttonCommandHelp" mnemonicParsing="false" onAction="#showCommandHelp" prefHeight="26.0" text="?" textFill="#00000080" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin></Button>
+                  <TextArea fx:id="textAreaTerminal" editable="false" prefHeight="479.0" prefWidth="265.0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Courier New" size="13.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets top="4.0" />
+                     </GridPane.margin>
+                  </TextArea>
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="243.0" prefHeight="346.0" prefWidth="564.0" style="-fx-border-color: A4A4A4; -fx-border-radius: 4; -fx-background-color: 3C3F41;">
+         <children>
+            <Label layoutX="14.0" layoutY="-8.0" style="-fx-background-color: #F4F4F4;" text=" Laser info " />
+            <GridPane hgap="15.0" layoutX="15.0" layoutY="13.0" prefHeight="322.0" prefWidth="534.0" vgap="15.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="251.20001220703125" minWidth="10.0" prefWidth="242.4000244140625" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="277.5999511718749" minWidth="10.0" prefWidth="275.9999755859374" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane prefHeight="148.0" prefWidth="220.0" style="-fx-border-color: A4A4A4; -fx-border-radius: 4;">
+                     <children>
+                        <Label layoutX="14.0" layoutY="-8.0" style="-fx-background-color: #F4F4F4;" text=" System " />
+                        <GridPane layoutX="11.0" layoutY="13.0" prefHeight="125.0" prefWidth="190.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="88.99996337890624" minWidth="10.0" prefWidth="56.799951171875" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.20001220703125" minWidth="10.0" prefWidth="18.400048828125" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.20001220703125" minWidth="10.0" prefWidth="115.20001220703125" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Text fx:id="textState" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" />
+                              <Text fx:id="textSysHours" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Text fx:id="textTempSystem" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Text fx:id="textVCCIN" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Text fx:id="textCURIN" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Text fx:id="textPWRIN" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Label text="State" />
+                              <Label text="Hour" GridPane.rowIndex="1" />
+                              <Label text="Temp." GridPane.rowIndex="2" />
+                              <Label text="VCCIN" GridPane.rowIndex="3" />
+                              <Label text="PWRIN" GridPane.rowIndex="5" />
+                              <Label text="CURIN" GridPane.rowIndex="4" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="148.0" prefWidth="220.0" style="-fx-border-color: A4A4A4; -fx-border-radius: 4;" GridPane.rowIndex="1">
+                     <children>
+                        <Label layoutX="14.0" layoutY="-8.0" style="-fx-background-color: #F4F4F4;" text=" Set values " />
+                        <GridPane layoutX="12.0" layoutY="13.0" prefHeight="125.0" prefWidth="198.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="81.6" minWidth="10.0" prefWidth="55.9999755859375" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="88.800048828125" minWidth="4.200036621093744" prefWidth="17.600024414062496" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.20001220703125" minWidth="10.0" prefWidth="125.5999755859375" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Text fx:id="textNBA" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" />
+                              <Text fx:id="textNBB" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Text fx:id="textSMF" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Text fx:id="textSEF" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Text fx:id="textSEV" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Text fx:id="textSEC" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Label text="NBA" />
+                              <Label text="NBB" GridPane.rowIndex="1" />
+                              <Label text="SMF" GridPane.rowIndex="2" />
+                              <Label text="SEF" GridPane.rowIndex="3" />
+                              <Label text="SEC" GridPane.rowIndex="5" />
+                              <Label text="SEV" GridPane.rowIndex="4" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="147.0" prefWidth="226.0" style="-fx-border-color: A4A4A4; -fx-border-radius: 4;" GridPane.columnIndex="1">
+                     <children>
+                        <Label layoutX="14.0" layoutY="-8.0" style="-fx-background-color: #F4F4F4;" text=" Seed " />
+                        <GridPane layoutX="12.0" layoutY="12.0" prefHeight="125.0" prefWidth="198.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.40000381469727" minWidth="10.0" prefWidth="63.000024414062494" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.39996337890625" minWidth="10.0" prefWidth="21.5999755859375" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.40001220703125" minWidth="10.0" prefWidth="113.6000244140625" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Text fx:id="textVoltageSeed" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" />
+                              <Text fx:id="textVoltageBoost" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Text fx:id="textVoltageReg" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Text fx:id="textVoltageNBA" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Text fx:id="textVoltageNBB" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Text fx:id="textTempSeed" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Label text="VCC" />
+                              <Label text="BOOST" GridPane.rowIndex="1" />
+                              <Label text="REG" GridPane.rowIndex="2" />
+                              <Label text="NBA" GridPane.rowIndex="3" />
+                              <Label text="TEMP" GridPane.rowIndex="5" />
+                              <Label text="NBB" GridPane.rowIndex="4" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="147.0" prefWidth="226.0" style="-fx-border-color: A4A4A4; -fx-border-radius: 4;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label layoutX="14.0" layoutY="-8.0" style="-fx-background-color: #F4F4F4;" text=" Trigger " />
+                        <GridPane layoutX="12.0" layoutY="14.0" prefHeight="55.0" prefWidth="198.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="63.000040435791014" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.19995117187501" minWidth="10.0" prefWidth="20.80001220703126" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.00003662109376" minWidth="10.0" prefWidth="115.19998779296876" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Text fx:id="textTriggerSource" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" />
+                              <Text fx:id="textTriggerFrequencyEXT" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Text fx:id="textTriggerFrequencyINT" strokeType="OUTSIDE" strokeWidth="0.0" text="--" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label text="SOURCE" />
+                              <Label text="EXT" GridPane.rowIndex="1" />
+                              <Label text="INT" GridPane.rowIndex="2" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </Pane>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </GridPane>
+         </children>
+      </Pane>
+
+   </children>
+</AnchorPane>

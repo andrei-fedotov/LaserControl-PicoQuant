@@ -1,0 +1,23 @@
+.root{
+-fx-background-color: #3C3F41;
+}
+
+
+.label {
+    -fx-text-fill: #BBBBBB;
+    -fx-background-color: #3C3F41;
+}
+
+.menu-bar {
+    -fx-background-color: derive(#3C3F41,20%);
+}
+
+.menu-bar .label {
+    -fx-background-color: derive(#3C3F41,20%);
+    -fx-text-fill: #BBBBBB;
+}
+
+
+.context-menu {
+    -fx-background-color: derive(#3C3F41,20%);
+}
