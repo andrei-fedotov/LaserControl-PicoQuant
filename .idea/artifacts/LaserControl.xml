@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="PQJAR">
-    <output-path>$PROJECT_DIR$/out/artifacts/PQJAR</output-path>
-    <root id="archive" name="PQJAR.jar">
+  <artifact type="jar" build-on-make="true" name="LaserControl">
+    <output-path>$PROJECT_DIR$/out/artifacts/LaserControl</output-path>
+    <root id="archive" name="LaserControl.jar">
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
       </element>

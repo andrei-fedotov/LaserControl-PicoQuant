@@ -34,7 +34,7 @@ public class LaserStateService extends Service<Void>
                     System.out.println(">>enter to loop");
                     rootLayoutController.displayLaserInfo();
                     System.out.println("middle of the loop");
-                    logger.writeLog();                  // uncomment if you would like to write log-file
+                    //logger.writeLog();                  // uncomment if you would like to write log-file
 
 
                     try {
